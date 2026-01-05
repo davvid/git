@@ -297,6 +297,9 @@ struct startup_info {
 	const char *original_cwd;
 };
 extern struct startup_info *startup_info;
+const struct startup_info *git_get_startup_info(void);
+int git_startup_info_have_repository(const struct startup_info *info);
+
 extern const char *tmp_original_cwd;
 
 #endif /* SETUP_H */

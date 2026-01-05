@@ -2907,3 +2907,13 @@ int init_db(struct repository *repo,
 	free(original_git_dir);
 	return 0;
 }
+
+const struct startup_info *git_get_startup_info(void)
+{
+	return startup_info;
+}
+
+int git_startup_info_have_repository(const struct startup_info *info)
+{
+	return info->have_repository;
+}
