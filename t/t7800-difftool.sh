@@ -472,7 +472,7 @@ test_expect_success 'setup change in subdirectory' '
 	git commit -m "modified both"
 '
 
-test_expect_success 'difftool -d with growing paths' '
+test_expect_success 'difftool --dir-diff with growing paths' '
 	a=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa &&
 	git init growing &&
 	(
@@ -487,7 +487,7 @@ test_expect_success 'difftool -d with growing paths' '
 			--cacheinfo 100644,$two,$a --cacheinfo 100644,$one,b &&
 		tree2=$(git write-tree) &&
 		git checkout -- $a &&
-		git difftool -d --extcmd .git/test-for-b.sh $tree1 $tree2
+		git difftool --dir-diff --extcmd .git/test-for-b.sh $tree1 $tree2
 	)
 '
 
@@ -673,7 +673,7 @@ write_script modify-file <<\EOF
 echo "new content" >file
 EOF
 
-test_expect_success 'difftool --no-symlinks does not overwrite working tree file ' '
+test_expect_success 'difftool --dir-diff --no-symlinks does not overwrite working tree file ' '
 	echo "orig content" >file &&
 	git difftool --dir-diff --no-symlinks --extcmd "$PWD/modify-file" branch &&
 	echo "new content" >expect &&
@@ -686,7 +686,7 @@ echo "tmp content" >"$2/file" &&
 echo "$2" >tmpdir
 EOF
 
-test_expect_success 'difftool --no-symlinks detects conflict ' '
+test_expect_success 'difftool --dir-diff --no-symlinks detects conflict ' '
 	(
 		TMPDIR=$TRASH_DIRECTORY &&
 		export TMPDIR &&
@@ -699,7 +699,7 @@ test_expect_success 'difftool --no-symlinks detects conflict ' '
 	)
 '
 
-test_expect_success 'difftool properly honors gitlink and core.worktree' '
+test_expect_success 'difftool --dir-diff properly honors gitlink and core.worktree' '
 	test_when_finished rm -rf submod/ule &&
 	test_config_global protocol.file.allow always &&
 	git submodule add ./. submod/ule &&
@@ -859,7 +859,7 @@ test_expect_success SYMLINKS 'difftool --dir-diff writes symlinks as raw text' '
 	)
 '
 
-test_expect_success 'add -N and difftool -d' '
+test_expect_success 'difftool --dir-diff and add -N' '
 	test_when_finished git reset --hard &&
 
 	test_write_lines A B C >intent-to-add &&
@@ -880,7 +880,7 @@ test_expect_success 'difftool --cached with unmerged files' '
 	test_must_be_empty output
 '
 
-test_expect_success 'outside worktree' '
+test_expect_success 'difftool outside worktree' '
 	echo 1 >1 &&
 	echo 2 >2 &&
 	test_expect_code 1 nongit git \
