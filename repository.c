@@ -148,6 +148,21 @@ const char *repo_get_work_tree(struct repository *repo)
 	return repo->worktree;
 }
 
+const struct git_hash_algo *repo_get_hash_algo(struct repository *repo)
+{
+	return repo->hash_algo;
+}
+
+struct object_database *repo_get_object_database(struct repository *repo)
+{
+	return repo->objects;
+}
+
+struct index_state *repo_get_index_state(struct repository *repo)
+{
+	return repo->index;
+}
+
 static void repo_set_commondir(struct repository *repo,
 			       const char *commondir)
 {
