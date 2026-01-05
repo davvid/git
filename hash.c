@@ -335,3 +335,8 @@ unsigned oid_common_prefix_hexlen(const struct object_id *a,
 
 	return rawsz * 2;
 }
+
+int git_hash_algo_get_hexsz(const struct git_hash_algo *algop)
+{
+	return algop->hexsz;
+}
