@@ -1561,6 +1561,7 @@ RUST_SOURCES += src/csum_file.rs
 RUST_SOURCES += src/hash.rs
 RUST_SOURCES += src/lib.rs
 RUST_SOURCES += src/loose.rs
+RUST_SOURCES += src/object.rs
 RUST_SOURCES += src/varint.rs
 
 GIT-VERSION-FILE: FORCE

@@ -3,6 +3,7 @@ libgit_rs_sources = [
   'hash.rs',
   'lib.rs',
   'loose.rs',
+  'object.rs',
   'varint.rs',
 ]
 
