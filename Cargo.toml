@@ -9,4 +9,5 @@ crate-type = ["staticlib"]
 
 [dependencies]
 bitfield-struct = "0.9"
+clap = { version = "4.5", features = ["derive"] }
 libc = "0.2"

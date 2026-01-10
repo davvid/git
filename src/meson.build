@@ -1,4 +1,6 @@
 libgit_rs_sources = [
+  'builtin/difftool.rs',
+  'builtin/mod.rs',
   'config.rs',
   'convert.rs',
   'csum_file.rs',

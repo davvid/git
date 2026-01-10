@@ -617,7 +617,6 @@ builtin_sources = [
   'builtin/diff-pairs.c',
   'builtin/diff-tree.c',
   'builtin/diff.c',
-  'builtin/difftool.c',
   'builtin/fast-export.c',
   'builtin/fast-import.c',
   'builtin/fetch-pack.c',
@@ -1770,6 +1769,9 @@ if rust_option.allowed()
 else
   libgit_sources += [
     'varint.c',
+  ]
+  builtin_sources += [
+    'builtin/difftool.c',
   ]
 endif
 

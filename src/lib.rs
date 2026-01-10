@@ -1,3 +1,4 @@
+pub mod builtin;
 pub mod config;
 pub mod convert;
 pub mod csum_file;
