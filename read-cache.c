@@ -2417,6 +2417,19 @@ int is_index_unborn(struct index_state *istate)
 	return (!istate->cache_nr && !istate->timestamp.sec);
 }
 
+struct index_state *index_state_create(struct repository *r)
+{
+	struct index_state *state = malloc(sizeof(struct index_state));
+	index_state_init(state, r);
+	return state;
+}
+
+void index_state_free(struct index_state *state)
+{
+	release_index(state);
+	free(state);
+}
+
 void index_state_init(struct index_state *istate, struct repository *r)
 {
 	struct index_state blank = INDEX_STATE_INIT(r);
@@ -2457,6 +2470,17 @@ void discard_index(struct index_state *istate)
 {
 	release_index(istate);
 	index_state_init(istate, istate->repo);
+}
+
+unsigned int index_state_get_cache_nr(const struct index_state *istate)
+{
+	return istate->cache_nr;
+}
+
+const char *
+index_state_get_cache_entry_name(const struct index_state *istate, size_t idx)
+{
+	return istate->cache[idx]->name;
 }
 
 /*

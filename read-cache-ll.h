@@ -1,6 +1,7 @@
 #ifndef READ_CACHE_LL_H
 #define READ_CACHE_LL_H
 
+#include "git-compat-util.h"
 #include "hash.h"
 #include "hashmap.h"
 #include "statinfo.h"
@@ -205,6 +206,16 @@ struct index_state {
 }
 void index_state_init(struct index_state *istate, struct repository *r);
 void release_index(struct index_state *istate);
+
+/* Allocate and initialize struct index_state on the heap. */
+struct index_state *index_state_create(struct repository* r);
+
+/* Deallocate a heap-allocated struct index_state. */
+void index_state_free(struct index_state *istate);
+
+unsigned int index_state_get_cache_nr(const struct index_state *istate);
+
+const char *index_state_get_cache_entry_name(const struct index_state *istate, size_t idx);
 
 /* Cache entry creation and cleanup */
 
