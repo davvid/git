@@ -1,4 +1,5 @@
 libgit_rs_sources = [
+  'config.rs',
   'convert.rs',
   'csum_file.rs',
   'hash.rs',
