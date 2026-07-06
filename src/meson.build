@@ -14,6 +14,7 @@ libgit_rs_sources = [
   'read_cache.rs',
   'repository.rs',
   'setup.rs',
+  'sparse_index.rs',
   'varint.rs',
 ]
 
