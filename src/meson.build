@@ -10,6 +10,7 @@ libgit_rs_sources = [
   'lockfile.rs',
   'object.rs',
   'object_file.rs',
+  'odb.rs',
   'varint.rs',
 ]
 

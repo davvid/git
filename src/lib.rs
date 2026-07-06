@@ -8,4 +8,5 @@ pub mod lockfile;
 pub mod loose;
 pub mod object;
 pub mod object_file;
+pub mod odb;
 pub mod varint;
