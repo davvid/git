@@ -11,6 +11,7 @@ libgit_rs_sources = [
   'object.rs',
   'object_file.rs',
   'odb.rs',
+  'read_cache.rs',
   'varint.rs',
 ]
 

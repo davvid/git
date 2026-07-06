@@ -1569,6 +1569,7 @@ RUST_SOURCES += src/loose.rs
 RUST_SOURCES += src/object.rs
 RUST_SOURCES += src/object_file.rs
 RUST_SOURCES += src/odb.rs
+RUST_SOURCES += src/read_cache.rs
 RUST_SOURCES += src/varint.rs
 
 GIT-VERSION-FILE: FORCE
