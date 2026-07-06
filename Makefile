@@ -1567,6 +1567,7 @@ RUST_SOURCES += src/lib.rs
 RUST_SOURCES += src/lockfile.rs
 RUST_SOURCES += src/loose.rs
 RUST_SOURCES += src/object.rs
+RUST_SOURCES += src/object_file.rs
 RUST_SOURCES += src/varint.rs
 
 GIT-VERSION-FILE: FORCE

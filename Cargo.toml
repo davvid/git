@@ -9,3 +9,4 @@ crate-type = ["staticlib"]
 
 [dependencies]
 bitfield-struct = "0.9"
+libc = "0.2"

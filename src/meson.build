@@ -9,6 +9,7 @@ libgit_rs_sources = [
   'loose.rs',
   'lockfile.rs',
   'object.rs',
+  'object_file.rs',
   'varint.rs',
 ]
 

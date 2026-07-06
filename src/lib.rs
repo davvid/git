@@ -7,4 +7,5 @@ pub mod hex;
 pub mod lockfile;
 pub mod loose;
 pub mod object;
+pub mod object_file;
 pub mod varint;
