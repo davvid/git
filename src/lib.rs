@@ -13,4 +13,5 @@ pub mod read_cache;
 pub mod repository;
 pub mod setup;
 pub mod sparse_index;
+pub mod types;
 pub mod varint;

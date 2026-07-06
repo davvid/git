@@ -1573,6 +1573,7 @@ RUST_SOURCES += src/read_cache.rs
 RUST_SOURCES += src/repository.rs
 RUST_SOURCES += src/setup.rs
 RUST_SOURCES += src/sparse_index.rs
+RUST_SOURCES += src/types.rs
 RUST_SOURCES += src/varint.rs
 
 GIT-VERSION-FILE: FORCE

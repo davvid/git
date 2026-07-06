@@ -15,6 +15,7 @@ libgit_rs_sources = [
   'repository.rs',
   'setup.rs',
   'sparse_index.rs',
+  'types.rs',
   'varint.rs',
 ]
 
