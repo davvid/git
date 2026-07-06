@@ -1562,6 +1562,7 @@ RUST_SOURCES += src/convert.rs
 RUST_SOURCES += src/csum_file.rs
 RUST_SOURCES += src/entry.rs
 RUST_SOURCES += src/hash.rs
+RUST_SOURCES += src/hex.rs
 RUST_SOURCES += src/lib.rs
 RUST_SOURCES += src/loose.rs
 RUST_SOURCES += src/object.rs
