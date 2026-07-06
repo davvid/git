@@ -13,6 +13,7 @@ libgit_rs_sources = [
   'odb.rs',
   'read_cache.rs',
   'repository.rs',
+  'setup.rs',
   'varint.rs',
 ]
 
