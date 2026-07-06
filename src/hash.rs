@@ -347,6 +347,7 @@ pub mod c {
     extern "C" {
         pub fn hash_algo_ptr_by_number(n: u32) -> *const c_void;
         pub fn unsafe_hash_algo(algop: *const c_void) -> *const c_void;
+        pub fn git_hash_algo_get_hexsz(git_hash_algo: *const std::ffi::c_void) -> i32;
         pub fn git_hash_alloc() -> *mut c_void;
         pub fn git_hash_free(ctx: *mut c_void);
         pub fn git_hash_init(dst: *mut c_void, algop: *const c_void);
@@ -354,6 +355,7 @@ pub mod c {
         pub fn git_hash_update(ctx: *mut c_void, inp: *const c_void, len: usize);
         pub fn git_hash_final(hash: *mut u8, ctx: *mut c_void);
         pub fn git_hash_final_oid(hash: *mut c_void, ctx: *mut c_void);
+        pub fn null_oid(algop: *const c_void) -> *const c_void;
     }
 }
 
