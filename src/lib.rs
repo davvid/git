@@ -4,6 +4,7 @@ pub mod csum_file;
 pub mod entry;
 pub mod hash;
 pub mod hex;
+pub mod lockfile;
 pub mod loose;
 pub mod object;
 pub mod varint;

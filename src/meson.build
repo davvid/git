@@ -7,6 +7,7 @@ libgit_rs_sources = [
   'hex.rs',
   'lib.rs',
   'loose.rs',
+  'lockfile.rs',
   'object.rs',
   'varint.rs',
 ]
