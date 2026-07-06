@@ -10,4 +10,5 @@ pub mod object;
 pub mod object_file;
 pub mod odb;
 pub mod read_cache;
+pub mod repository;
 pub mod varint;
