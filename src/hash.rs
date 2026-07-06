@@ -163,7 +163,7 @@ impl CryptoDigest for CryptoHasher {
     /// Return an object ID, consuming the hasher.
     fn into_oid(self) -> ObjectID {
         let mut oid = ObjectID {
-            hash: [0u8; 32],
+            hash: [0u8; GIT_MAX_RAWSZ],
             algo: self.algo as u32,
         };
         unsafe { c::git_hash_final_oid(&mut oid as *mut ObjectID as *mut c_void, self.ctx) };
@@ -217,11 +217,11 @@ pub enum HashAlgorithm {
 #[allow(dead_code)]
 impl HashAlgorithm {
     const SHA1_NULL_OID: ObjectID = ObjectID {
-        hash: [0u8; 32],
+        hash: [0u8; GIT_MAX_RAWSZ],
         algo: Self::SHA1 as u32,
     };
     const SHA256_NULL_OID: ObjectID = ObjectID {
-        hash: [0u8; 32],
+        hash: [0u8; GIT_MAX_RAWSZ],
         algo: Self::SHA256 as u32,
     };
 

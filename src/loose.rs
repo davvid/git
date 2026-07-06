@@ -649,7 +649,7 @@ impl ObjectMap {
 #[cfg(test)]
 mod tests {
     use super::{MapType, MmapedObjectMap, ObjectMap, ObjectMemoryMap};
-    use crate::hash::{CryptoDigest, CryptoHasher, HashAlgorithm, ObjectID};
+    use crate::hash::{CryptoDigest, CryptoHasher, HashAlgorithm, ObjectID, GIT_MAX_RAWSZ};
     use std::convert::TryInto;
     use std::io::{self, Cursor, Write};
 
@@ -690,7 +690,7 @@ mod tests {
 
     fn sha1_oid(b: &[u8]) -> ObjectID {
         assert_eq!(b.len(), 20);
-        let mut data = [0u8; 32];
+        let mut data = [0u8; GIT_MAX_RAWSZ];
         data[0..20].copy_from_slice(b);
         ObjectID {
             hash: data,
@@ -795,7 +795,7 @@ mod tests {
 
         for octet in &[0x00u8, 0x6d, 0x6e, 0x8a, 0xff] {
             let missing_oid = ObjectID {
-                hash: [*octet; 32],
+                hash: [*octet; GIT_MAX_RAWSZ],
                 algo: HashAlgorithm::SHA256 as u32,
             };
 
@@ -848,7 +848,7 @@ mod tests {
         let s1 = sha1_oid(entries[0].1);
 
         let missing_oid = ObjectID {
-            hash: [0xffu8; 32],
+            hash: [0xffu8; GIT_MAX_RAWSZ],
             algo: HashAlgorithm::SHA256 as u32,
         };
 
