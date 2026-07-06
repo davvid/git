@@ -2,6 +2,7 @@ libgit_rs_sources = [
   'config.rs',
   'convert.rs',
   'csum_file.rs',
+  'entry.rs',
   'hash.rs',
   'lib.rs',
   'loose.rs',
